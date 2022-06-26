@@ -1,13 +1,14 @@
 import { IFlatButton } from './FlatButton';
 
-const base: IFlatButton = {
+const args: IFlatButton = {
   type: 'button',
   variant: 'primary',
   size: 'default',
+  loading: false,
   children: 'Hello World',
   onClick: () => {},
 };
 
 export const mockFlatButtonProps = {
-  base,
+  args,
 };

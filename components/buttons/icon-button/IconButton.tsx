@@ -1,6 +1,6 @@
 export interface IIconButton {
   type?: 'button' | 'submit';
-  variant?: 'primary' | 'danger' | 'default';
+  variant?: 'primary' | 'danger' | 'default' | 'transparent';
   size?: 'small' | 'default' | 'large';
   color?: 'bg-fuchsia-600' & string;
   textColor?: 'white' & string;
@@ -13,6 +13,7 @@ const attributes = {
     primary: 'bg-fuchsia-600 hover:bg-fuchsia-700',
     default: 'bg-blue-600',
     danger: 'bg-red-600',
+    transparent: 'backdrop-blur-sm',
   },
   sizes: {
     small: 'py-1 px-1 rounded-md',
