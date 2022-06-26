@@ -12,23 +12,43 @@ yarn dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## App Features
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+- UI
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+  - Authenticate
+    - Signup (Email/Username/Phone)
+    - Login
+    - OTP Verification
+    - Reset Password
+  - Home Screen
+  - Profile Setting
+    - Edit Profile/Personalization
+    - Change Password
+    - User Activity
+    - Session History
+    - Notification
+    - Language
+    - T&C
+    - Logout
 
-## Learn More
+- Business Rules
+  - Add music from youtube
+  - Upload own cover song
+  - Group Listening
+  - Following/Follower Listener
+  - Notify to follower when Listener add new song
 
-To learn more about Next.js, take a look at the following resources:
+## TODO
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- Configure Engine Locking (.nvmrc, .npmrc)
+- Setup Git & Git Hooks (Husky)
+- Setup Code Formatting and Quality Tools (Eslint, Prettier)
+- Configure VS Code
+- Setup Storybook
+- Config Tailwind Theme, Darkmode, FontFamily
+- Setup Project Structure (TDD)
+- Setup Testing
+  - e2e test (cypress)
+  - Unit test
+  - Integrate test
