@@ -27,13 +27,19 @@ const Template: ComponentStory<typeof FlatButton> = (args) => {
 
 export const Default = Template.bind({});
 export const Primary = Template.bind({});
+export const Danger = Template.bind({});
 
 Default.args = {
-  ...mockFlatButtonProps.args,
+  ...mockFlatButtonProps.parameters,
   variant: 'default',
 } as IFlatButton;
 
 Primary.args = {
-  ...mockFlatButtonProps.args,
+  ...mockFlatButtonProps.parameters,
   variant: 'primary',
+} as IFlatButton;
+
+Danger.args = {
+  ...mockFlatButtonProps.parameters,
+  variant: 'danger',
 } as IFlatButton;

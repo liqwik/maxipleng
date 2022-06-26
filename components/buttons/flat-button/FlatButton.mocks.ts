@@ -1,6 +1,6 @@
 import { IFlatButton } from './FlatButton';
 
-const args: IFlatButton = {
+const parameters: IFlatButton = {
   type: 'button',
   variant: 'primary',
   size: 'default',
@@ -10,5 +10,5 @@ const args: IFlatButton = {
 };
 
 export const mockFlatButtonProps = {
-  args,
+  parameters,
 };
