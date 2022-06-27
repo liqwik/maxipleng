@@ -1,5 +1,6 @@
+import { HomeIcon } from '@heroicons/react/outline';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import IconButton, { IIconButton } from './IconButton';
+import IconButton, { IIconButtonProps } from './IconButton';
 import { mockIconButtonProps } from './IconButton.mocks';
 
 export default {
@@ -11,15 +12,21 @@ export default {
 const Template: ComponentStory<typeof IconButton> = (args) => {
   return (
     <>
-      <IconButton {...args} size="small" />
-      <IconButton {...args} />
-      <IconButton {...args} size="large" />
+      <IconButton {...args}>
+        <HomeIcon className="stroke-1" />
+      </IconButton>
+      <IconButton {...args} variant="secondary">
+        <HomeIcon className="stroke-1" />
+      </IconButton>
+      <IconButton {...args} variant="danger">
+        <HomeIcon className="stroke-1" />
+      </IconButton>
     </>
   );
 };
 
-export const Base = Template.bind({});
-
-Base.args = {
-  ...mockIconButtonProps.base,
-} as IIconButton;
+export const Primary = Template.bind({});
+Primary.args = {
+  ...mockIconButtonProps.params,
+  children: <HomeIcon />,
+} as IIconButtonProps;

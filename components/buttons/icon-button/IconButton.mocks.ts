@@ -1,13 +1,12 @@
-import { IIconButton } from './IconButton';
+import { IIconButtonProps } from './IconButton';
 
-const base: IIconButton = {
+const params: IIconButtonProps = {
   type: 'button',
   variant: 'primary',
-  size: 'default',
-  children: 'Hello World',
+  size: 'md',
   onClick: () => {},
 };
 
 export const mockIconButtonProps = {
-  base,
+  params,
 };

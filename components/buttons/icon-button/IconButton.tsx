@@ -1,42 +1,55 @@
-export interface IIconButton {
-  type?: 'button' | 'submit';
-  variant?: 'primary' | 'danger' | 'default' | 'transparent';
-  size?: 'small' | 'default' | 'large';
-  color?: 'bg-fuchsia-600' & string;
-  textColor?: 'white' & string;
+import { BtnSize, BtnType, BtnVariant, TextColor } from '../ButtonPropsType';
+
+export interface IIconButtonProps {
+  type?: BtnType;
+  variant?: BtnVariant;
+  size?: BtnSize;
+  color?: TextColor;
   children?: any;
   onClick?: () => void;
 }
 
 const attributes = {
   variants: {
-    primary: 'bg-fuchsia-600 hover:bg-fuchsia-700',
-    default: 'bg-blue-600',
-    danger: 'bg-red-600',
-    transparent: 'backdrop-blur-sm',
+    primary: 'bg-pink-400 hover:bg-pink-600 text-white',
+    secondary:
+      'bg-white hover:bg-pink-200 text-pink-400 border border-pink-400',
+    danger: 'bg-red-600 hover:bg-red-700 text-white',
   },
   sizes: {
-    small: 'py-1 px-1 rounded-md',
-    default: 'py-2 px-2 rounded-md',
-    large: 'py-3 px-3 rounded-lg',
+    sm: 'w-6 h-6 rounded-md',
+    md: 'w-8 h-8 rounded-md',
+    lg: 'w-12 h-12 rounded-lg',
+  },
+  iconsSize: {
+    sm: 'w-4 h-4',
+    md: 'w-6 h-6',
+    lg: 'w-8 h-8',
   },
 };
 
-const IconButton: React.FC<IIconButton> = ({
+const IconButton: React.FC<IIconButtonProps> = ({
   type = 'button',
   variant = 'primary',
-  size = 'default',
-  textColor = 'text-white',
+  size = 'md',
+  color,
   children,
-  onClick,
+  ...props
 }) => {
   return (
     <button
       type={type}
-      className={`${attributes.variants[variant]} ${attributes.sizes[size]} ${textColor}`}
-      onClick={onClick}
+      className={[
+        attributes.variants[variant],
+        attributes.sizes[size],
+        color,
+        'inline-flex items-center justify-center box-border',
+      ].join(' ')}
+      {...props}
     >
-      {children}
+      <span className={[attributes.iconsSize[size], 'storke-1'].join(' ')}>
+        {children}
+      </span>
     </button>
   );
 };
