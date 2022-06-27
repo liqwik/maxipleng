@@ -1,46 +1,51 @@
 import { LoadingIcon } from '@/components/icons';
+import { ReactNode } from 'react';
 import { BtnSize, BtnType, BtnVariant, TextColor } from '../ButtonPropsType';
 
-export interface IFlatButton {
+export interface IFlatButtonProps {
   type: BtnType;
   variant: BtnVariant;
   size: BtnSize;
-  textColor?: TextColor;
+  color?: TextColor;
   loading?: boolean;
-  children?: any;
+  children?: ReactNode;
   onClick?: () => void;
 }
 
 const attributes = {
   variants: {
-    default: 'bg-blue-600',
-    primary: 'bg-fuchsia-600',
-    secondary: 'bg-fuchsia-400',
-    danger: 'bg-red-600',
-    success: 'bg-green-600',
+    primary: 'bg-pink-500 hover:bg-pink-700 text-white',
+    secondary:
+      'bg-white hover:bg-pink-200 text-pink-500 border border-pink-500',
+    danger: 'bg-red-600 hover:bg-red-700 text-white',
   },
   sizes: {
-    default: 'py-2 px-8',
-    sm: 'py-1 px-4',
+    sm: 'py-1 px-4 text-sm',
+    md: 'py-1 px-4 md:py-2 md:px-8',
     lg: 'py-3 px-12',
   },
 };
 
-const FlatButton: React.FC<IFlatButton> = ({
+const FlatButton: React.FC<IFlatButtonProps> = ({
   type = 'button',
   variant = 'primary',
-  size = 'default',
-  textColor = 'text-white',
+  size = 'md',
   loading = false,
+  color,
   children,
-  onClick,
+  ...props
 }) => {
   return (
     <button
       type={type}
-      className={`${attributes.variants[variant]} ${attributes.sizes[size]} ${textColor} rounded items-center`}
+      className={[
+        attributes.variants[variant],
+        attributes.sizes[size],
+        color,
+        'rounded flex justify-center items-center',
+      ].join(' ')}
       disabled={loading}
-      onClick={onClick}
+      {...props}
     >
       {loading && <LoadingIcon />}
       {children}

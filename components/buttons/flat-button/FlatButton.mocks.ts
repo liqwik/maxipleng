@@ -1,11 +1,11 @@
-import { IFlatButton } from './FlatButton';
+import { IFlatButtonProps } from './FlatButton';
 
-const parameters: IFlatButton = {
+const parameters: IFlatButtonProps = {
   type: 'button',
   variant: 'primary',
-  size: 'default',
+  size: 'md',
   loading: false,
-  children: 'Hello World',
+  children: 'Flat Button',
   onClick: () => {},
 };
 
