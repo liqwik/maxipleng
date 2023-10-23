@@ -1,3 +1,6 @@
+import PrimaryLayout from '@/components/layouts/primary/PrimaryLayout';
+import SecondarySidebarLayout from '@/components/layouts/sidebar/SecondarySidebarLayout';
+import SidebarLayout from '@/components/layouts/sidebar/SidebarLayout';
 import MusicProvider from 'context/MusicContext';
 import type { AppProps } from 'next/app';
 import './globals.css';
@@ -13,7 +16,13 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout) {
   const getLayout = Component.getLayout || ((page) => page);
 
   return (
-    <MusicProvider>{getLayout(<Component {...pageProps} />)}</MusicProvider>
+    <MusicProvider>
+      <PrimaryLayout>
+        <SidebarLayout />
+        {getLayout(<Component {...pageProps} />)}
+        <SecondarySidebarLayout />
+      </PrimaryLayout>
+    </MusicProvider>
   );
 }
 

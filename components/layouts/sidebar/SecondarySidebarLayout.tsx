@@ -3,9 +3,9 @@ import Link from 'next/link';
 
 export interface ISidebarLayout {}
 
-const SidebarLayout: React.FC<ISidebarLayout> = () => {
+const SecondarySidebarLayout: React.FC<ISidebarLayout> = () => {
   return (
-    <nav className="w-2/12">
+    <nav className="w-3/12">
       <Link href="/">
         <a>
           <span className="inline-flex items-center p-2 bg-indigo-500 rounded-md shadow-lg">
@@ -24,4 +24,4 @@ const SidebarLayout: React.FC<ISidebarLayout> = () => {
   );
 };
 
-export default SidebarLayout;
+export default SecondarySidebarLayout;
